@@ -8,10 +8,8 @@ class TestScraper(unittest.TestCase):
         pass
 
     def test_get_page(self):
-        scraper = Scraper()
-        data = scraper.get_page(1)
-        assert data != ""
-        print data
-        assert data.startswith('<html>')
+	scraper = Scraper("htmltests/p1_5.html")
+        proyectos = scraper.procesa_proyectos()
+	assert 5, proyectos.__len__()
     
     
